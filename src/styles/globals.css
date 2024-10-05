@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +7,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-primary: #fff0f0;
+  --color-secondary: #6a3aa2;
+  --bg-gradient: linear-gradient(165.54deg, #141333 -33.39%, #202261 15.89%, #543C97 55.84%, #6939A2 74.96%);
+  --dark-primary: #333333;
+  --light-primary: #fbfbff;
+  --button-color: #eaeef7;
+  --border-color: #e0e0e0;
+  --shadow-primary: 2px 2px 6px 0px #543C9740;
+  --shadow-secondary: 0px 4px 4px 0px #D8D6D640;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,7 +28,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
