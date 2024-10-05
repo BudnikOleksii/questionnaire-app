@@ -1,13 +1,13 @@
-import { type Answer, type QuestionId } from '@/types/questionnaire';
+import { type Answer } from '@/types/questionnaire';
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
 interface AnswerPayload {
-  questionId: QuestionId;
+  questionName: string;
   answer: Answer;
 }
 
 export interface QuestionnaireState {
-  answers: Record<QuestionId, Answer>;
+  answers: Record<string, Answer>;
 }
 
 const initialState: QuestionnaireState = {
@@ -19,8 +19,8 @@ const questionnaireSlice = createSlice({
   initialState,
   reducers: {
     addAnswer: (state, action: PayloadAction<AnswerPayload>) => {
-      const { questionId, answer } = action.payload;
-      state.answers[questionId] = answer;
+      const { questionName, answer } = action.payload;
+      state.answers[questionName] = answer;
     },
   },
 });

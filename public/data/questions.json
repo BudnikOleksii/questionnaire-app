@@ -3,8 +3,8 @@
     {
       "id": 1,
       "slug": "select-your-gender",
-      "fieldName": "gender",
-      "text": "Select your gender",
+      "name": "gender",
+      "text": "Select your gender:",
       "screenType": "radio",
       "options": [
         {
@@ -21,13 +21,14 @@
           "text": "Male",
           "nextQuestionId": 2
         }
-      ]
+      ],
+      "isFirstScreen": true
     },
     {
       "id": 2,
       "slug": "relationship-status",
-      "fieldName": "relationshipStatus",
-      "text": "So we can get to know you better, tell us about your relationship status",
+      "name": "relationshipStatus",
+      "text": "So we can get to know you better, tell us about your relationship status.",
       "screenType": "radio",
       "options": [
         {
@@ -49,7 +50,7 @@
     {
       "id": 3,
       "slug": "single-parent",
-      "fieldName": "singleParent",
+      "name": "singleParent",
       "text": "Are you a single parent?",
       "screenType": "radio",
       "options": [
@@ -72,7 +73,7 @@
     {
       "id": 4,
       "slug": "parent",
-      "fieldName": "parent",
+      "name": "parent",
       "text": "Are you a parent?",
       "screenType": "radio",
       "options": [

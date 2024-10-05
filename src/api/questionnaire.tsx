@@ -15,16 +15,10 @@ export class QuestionnaireService {
     return response.questions;
   }
 
-  async getOneById(questionId: number) {
+  async getOneById(id: number) {
     // Just mock as I don't have an API
     const questions = await this.getAll();
-    const question = questions.find((question) => question.id === questionId);
-
-    if (!question) {
-      throw new Error('Question not found.');
-    }
-
-    return question;
+    return questions.find((question) => question.id === id);
   }
 }
 

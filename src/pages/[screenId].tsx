@@ -1,7 +1,15 @@
 import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 
 import questionnaireService from '@/api/questionnaire';
-import { type Question } from '@/types/questionnaire';
+import { Layout } from '@/components/Layout';
+import { RadioQuestionScreen } from '@/components/question/RadioQuestionScreen';
+import { type Question, type ScreenType } from '@/types/questionnaire';
+import { type LayoutVariant } from '@/types/theme';
+
+const SCREEN_TYPE_TO_LAYOUT_VARIANT_MAP: Record<ScreenType, LayoutVariant> = {
+  radio: 'default',
+  info: 'with-gradient',
+};
 
 export const getStaticPaths = (async () => {
   const questions = await questionnaireService.getAll();
@@ -11,21 +19,42 @@ export const getStaticPaths = (async () => {
 
   return {
     paths,
-    fallback: true, // false or "blocking"
+    fallback: true,
   };
 }) satisfies GetStaticPaths;
 
 export const getStaticProps = (async ({ params }) => {
-  if (!params || !params.screenId) {
-    throw new Error('No parameters provided');
+  if (!params || !params.screenId || Array.isArray(params.screenId)) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
   }
 
   const question = await questionnaireService.getOneById(+params.screenId);
+
+  if (!question) {
+    return {
+      notFound: true,
+    };
+  }
+
   return { props: { question } };
 }) satisfies GetStaticProps<{
   question: Question;
 }>;
 
-export default function Screen({ question }: InferGetStaticPropsType<typeof getStaticProps>) {
-  return <div>{question.slug}</div>;
+type Props = InferGetStaticPropsType<typeof getStaticProps>;
+
+export default function Screen({ question }: Props) {
+  const { screenType, isFirstScreen, slug } = question;
+  const variant = SCREEN_TYPE_TO_LAYOUT_VARIANT_MAP[screenType];
+
+  return (
+    <Layout variant={variant} isFirstPage={isFirstScreen}>
+      <RadioQuestionScreen question={question} />
+    </Layout>
+  );
 }

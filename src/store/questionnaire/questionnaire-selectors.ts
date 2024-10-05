@@ -4,4 +4,8 @@ export const selectAnswers = (state: AppState) => {
   return state.questionnaire.answers;
 };
 
-export const selectAnswer = (state: AppState) => {};
+export const selectAnswerByQuestionName = (questionName: string) => {
+  return (state: AppState) => {
+    return state.questionnaire.answers[questionName];
+  };
+};
