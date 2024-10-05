@@ -9,13 +9,13 @@
       "options": [
         {
           "id": 1,
-          "value": "female",
+          "value": "Female",
           "text": "Female",
           "nextQuestionId": 2
         },
         {
           "id": 2,
-          "value": "male",
+          "value": "Male",
           "text": "Male",
           "nextQuestionId": 2
         }
@@ -31,13 +31,13 @@
       "options": [
         {
           "id": 1,
-          "value": "single",
+          "value": "Single",
           "text": "Single",
           "nextQuestionId": 3
         },
         {
           "id": 2,
-          "value": "inRelationship",
+          "value": "In a relationship",
           "text": "In a relationship",
           "nextQuestionId": 4
         }
@@ -113,6 +113,39 @@
       ]
     },
     {
+      "id": 6,
+      "slug": "happiness-status",
+      "name": "happinessStatus",
+      "text": "Single {gender} ((children??who have children)) need a slightly different approach to find their perfect partner. But first, how did you feel in your last relationship?",
+      "screenType": "radio",
+      "options": [
+        {
+          "id": 1,
+          "value": "I was unhappy with low things were going in my relationship",
+          "text": "I was unhappy with low things were going in my relationship",
+          "nextQuestionId": 11
+        },
+        {
+          "id": 2,
+          "value": "I was unhappy with parts of my relationship, but some thing were working",
+          "text": "I was unhappy with parts of my relationship, but some thing were working",
+          "nextQuestionId": 11
+        },
+        {
+          "id": 3,
+          "value": "I was generally happy with my relationship",
+          "text": "I was generally happy with my relationship",
+          "nextQuestionId": 11
+        },
+        {
+          "id": 4,
+          "value": "I’ve never been in a relationship",
+          "text": "I’ve never been in a relationship",
+          "nextQuestionId": 11
+        }
+      ]
+    },
+    {
       "id": 7,
       "slug": "overthink",
       "name": "overthink",
@@ -148,6 +181,277 @@
           "nextQuestionId": "overthink?9:10"
         }
       ]
+    },
+    {
+      "id": 9,
+      "slug": "most-important",
+      "name": "mostImportant",
+      "text": "What is most important to you?",
+      "screenType": "radio",
+      "options": [
+        {
+          "id": 1,
+          "value": "Success",
+          "text": "Success",
+          "nextQuestionId": 15
+        },
+        {
+          "id": 2,
+          "value": "Romance",
+          "text": "Romance",
+          "nextQuestionId": 15
+        },
+        {
+          "id": 3,
+          "value": "Stability",
+          "text": "Stability",
+          "nextQuestionId": 15
+        },
+        {
+          "id": 4,
+          "value": "Freedom",
+          "text": "Freedom",
+          "nextQuestionId": 15
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "slug": "emotional-control",
+      "name": "emotionalControl",
+      "text": "Is emotional control tricky for you?",
+      "screenType": "radio",
+      "options": [
+        {
+          "id": 1,
+          "value": "Yes",
+          "text": "Yes",
+          "nextQuestionId": 15
+        },
+        {
+          "id": 2,
+          "value": "Sometimes",
+          "text": "Sometimes",
+          "nextQuestionId": 15
+        },
+        {
+          "id": 3,
+          "value": "Rarely",
+          "text": "Rarely",
+          "nextQuestionId": 15
+        },
+        {
+          "id": 4,
+          "value": "Not at all",
+          "text": "Not at all",
+          "nextQuestionId": 15
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "slug": "partner-type",
+      "name": "partnerType",
+      "text": "Is your partner an introvert or extrovert?",
+      "screenType": "radio",
+      "options": [
+        {
+          "id": 1,
+          "value": "Introvert",
+          "text": "Introvert",
+          "nextQuestionId": 12
+        },
+        {
+          "id": 2,
+          "value": "Extrovert",
+          "text": "Extrovert",
+          "nextQuestionId": 12
+        },
+        {
+          "id": 3,
+          "value": "A bit of both",
+          "text": "A bit of both",
+          "nextQuestionId": 12
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "slug": "partner-gender",
+      "name": "partnerGender",
+      "text": "What is your partner’s gender?",
+      "screenType": "radio",
+      "options": [
+        {
+          "id": 1,
+          "value": "Male",
+          "text": "Male",
+          "nextQuestionId": 13
+        },
+        {
+          "id": 2,
+          "value": "Female",
+          "text": "Female",
+          "nextQuestionId": 13
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "slug": "relationship-priority",
+      "name": "relationshipPriority",
+      "text": "Do you agree with the statement below?",
+      "description": "“My partner and I make sex a priority in our relationship”",
+      "screenType": "radio",
+      "options": [
+        {
+          "id": 1,
+          "value": "Strongly agree “My partner and I make sex a priority in our relationship”",
+          "text": "Strongly agree",
+          "nextQuestionId": 14
+        },
+        {
+          "id": 2,
+          "value": "Agree “My partner and I make sex a priority in our relationship”",
+          "text": "Agree",
+          "nextQuestionId": 14
+        },
+        {
+          "id": 3,
+          "value": "Neutral “My partner and I make sex a priority in our relationship”",
+          "text": "Neutral",
+          "nextQuestionId": 14
+        },
+        {
+          "id": 4,
+          "value": "Disagree “My partner and I make sex a priority in our relationship”",
+          "text": "Disagree",
+          "nextQuestionId": 14
+        },
+        {
+          "id": 5,
+          "value": "Strongly disagree “My partner and I make sex a priority in our relationship”",
+          "text": "Strongly disagree",
+          "nextQuestionId": 14
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "slug": "relationship-goals",
+      "name": "relationshipGoals",
+      "text": "When you think about your relationship goals, you feel...?",
+      "screenType": "radio",
+      "options": [
+        {
+          "id": 1,
+          "value": "Optimistic! They are totally doable, with some guidance.",
+          "text": "Optimistic! They are totally doable, with some guidance.",
+          "nextQuestionId": 15
+        },
+        {
+          "id": 2,
+          "value": "Cautious. I’ve struggled before, but I’m hopeful.",
+          "text": "Cautious. I’ve struggled before, but I’m hopeful.",
+          "nextQuestionId": 15
+        },
+        {
+          "id": 3,
+          "value": "I’m feeling a little anxious, honestly.",
+          "text": "I’m feeling a little anxious, honestly.",
+          "nextQuestionId": 15
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "slug": "about-us",
+      "name": "aboutUs",
+      "text": "Where did you hear about us?",
+      "screenType": "radio",
+      "options": [
+        {
+          "id": 1,
+          "value": "Poster or Billboard",
+          "text": "Poster or Billboard"
+        },
+        {
+          "id": 2,
+          "value": "Friend or Family",
+          "text": "Friend or Family"
+        },
+        {
+          "id": 3,
+          "value": "Instagram",
+          "text": "Instagram"
+        },
+        {
+          "id": 4,
+          "value": "Direct Mail or Package Insert",
+          "text": "Direct Mail or Package Insert"
+        },
+        {
+          "id": 5,
+          "value": "Online TV or Streaming TV",
+          "text": "Online TV or Streaming TV"
+        },
+        {
+          "id": 6,
+          "value": "TV",
+          "text": "TV"
+        },
+        {
+          "id": 7,
+          "value": "Radio",
+          "text": "Radio"
+        },
+        {
+          "id": 8,
+          "value": "Search Engine (Google, Bing, etc.)",
+          "text": "Search Engine (Google, Bing, etc.)"
+        },
+        {
+          "id": 9,
+          "value": "Newspaper or Magazine",
+          "text": "Newspaper or Magazine"
+        },
+        {
+          "id": 10,
+          "value": "Facebook",
+          "text": "Facebook"
+        },
+        {
+          "id": 11,
+          "value": "Blog Post or Website Review",
+          "text": "Blog Post or Website Review"
+        },
+        {
+          "id": 12,
+          "value": "Podcast",
+          "text": "Podcast"
+        },
+        {
+          "id": 13,
+          "value": "Influencer",
+          "text": "Influencer"
+        },
+        {
+          "id": 14,
+          "value": "Youtube",
+          "text": "Youtube"
+        },
+        {
+          "id": 15,
+          "value": "Pinterest",
+          "text": "Pinterest"
+        },
+        {
+          "id": 16,
+          "value": "Other",
+          "text": "Other"
+        }
+      ],
+      "isLastScreen": true
     }
   ]
 }

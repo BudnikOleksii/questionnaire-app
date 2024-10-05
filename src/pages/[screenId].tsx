@@ -50,7 +50,7 @@ export const getStaticProps = (async ({ params }) => {
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 export default function Screen({ question }: Props) {
-  const { screenType, isFirstScreen, slug } = question;
+  const { screenType, isFirstScreen } = question;
   const variant = SCREEN_TYPE_TO_LAYOUT_VARIANT_MAP[screenType];
 
   const renderScreen = () => {
