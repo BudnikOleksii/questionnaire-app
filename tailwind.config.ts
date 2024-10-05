@@ -12,6 +12,7 @@ const config: Config = {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
         primary: 'var(--color-primary)',
+        secondary: 'var(--color-secondary)',
         'dark-primary': 'var(--dark-primary)',
         'light-primary': 'var(--light-primary)',
         'button-primary': 'var(--button-color)',
@@ -23,6 +24,7 @@ const config: Config = {
       },
       boxShadow: {
         primary: 'var(--shadow-primary)',
+        secondary: 'var(--shadow-secondary)',
       },
     },
     container: {

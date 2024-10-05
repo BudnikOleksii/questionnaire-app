@@ -1,6 +1,7 @@
 import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 
 import questionnaireService from '@/api/questionnaire';
+import { InfoScreen } from '@/components/info/InfoScreen';
 import { Layout } from '@/components/Layout';
 import { RadioQuestionScreen } from '@/components/question/RadioQuestionScreen';
 import { type Question, type ScreenType } from '@/types/questionnaire';
@@ -52,9 +53,20 @@ export default function Screen({ question }: Props) {
   const { screenType, isFirstScreen, slug } = question;
   const variant = SCREEN_TYPE_TO_LAYOUT_VARIANT_MAP[screenType];
 
+  const renderScreen = () => {
+    switch (screenType) {
+      case 'radio':
+        return <RadioQuestionScreen question={question} />;
+      case 'info':
+        return <InfoScreen question={question} />;
+      default:
+        throw new Error('Unsupported screen type');
+    }
+  };
+
   return (
     <Layout variant={variant} isFirstPage={isFirstScreen}>
-      <RadioQuestionScreen question={question} />
+      {renderScreen()}
     </Layout>
   );
 }
