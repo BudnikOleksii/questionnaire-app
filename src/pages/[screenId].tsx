@@ -26,12 +26,7 @@ export const getStaticPaths = (async () => {
 
 export const getStaticProps = (async ({ params }) => {
   if (!params || !params.screenId || Array.isArray(params.screenId)) {
-    return {
-      redirect: {
-        destination: '/',
-        permanent: false,
-      },
-    };
+    throw new Error('Invalid parameter');
   }
 
   const question = await questionnaireService.getOneById(+params.screenId);
@@ -50,6 +45,10 @@ export const getStaticProps = (async ({ params }) => {
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 export default function Screen({ question }: Props) {
+  if (!question) {
+    return null;
+  }
+
   const { screenType, isFirstScreen } = question;
   const variant = SCREEN_TYPE_TO_LAYOUT_VARIANT_MAP[screenType];
 
