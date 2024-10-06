@@ -4,8 +4,7 @@ import '@/styles/globals.css';
 
 import { Provider } from 'react-redux';
 import { wrapper } from '@/store/store';
-const test = 1;
-
+// commit just for testing purposes
 export default function App({ Component, ...rest }: AppProps) {
   const { store, props } = wrapper.useWrappedStore(rest);
 
