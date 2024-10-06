@@ -31,8 +31,7 @@ export type ConditionalString = string;
 
 export interface Option {
   id: number;
-  slug: string;
-  value: string;
+  value: Answer;
   text: string;
   nextQuestionId: QuestionId | ConditionalString;
 }
