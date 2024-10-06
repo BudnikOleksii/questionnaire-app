@@ -1,5 +1,21 @@
 # Questionnaire app
 
+### Demo
+You can check out a live demo of the app here: [Live Demo](https://questionnaire-app-virid.vercel.app/).
+
+### Table of Contents
+- [How to Use the Application](#how-to-use-the-application)
+- [Project Description](#project-description)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Technologies Used](#technologies-used)
+
+### How to Use the Application
+Selecting an Option: To answer a question, click on one of the available options.
+Confirming Selection: After selecting an option, click on it again to confirm your choice and proceed to the next question.
+Navigation: The app automatically moves to the next question based on your answers. If your choice determines conditional logic, the app will follow the appropriate question path.
+Completion: Once you reach the last question, the app will display a summary or end screen based on the configuration.
+
 ### Project description
 This is a dynamic web application designed for generating customizable questionnaires. The application's behavior is driven by a JSON configuration file located in the public folder - `public/data/questions.json`. This file defines the structure and flow of the questionnaire, which is rendered dynamically based on the configuration.
 
