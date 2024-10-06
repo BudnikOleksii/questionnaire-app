@@ -9,7 +9,6 @@ export type ConditionalString = string;
 
 export interface Option {
   id: number;
-  slug: string;
   value: string;
   text: string;
   nextQuestionId: QuestionId | ConditionalString;
