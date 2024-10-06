@@ -1,0 +1,34 @@
+name: Code check
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  linter:
+    name: Linter
+    runs-on: ubuntu-22.04
+
+    strategy:
+      matrix:
+        node-version: [20]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Linter
+        run: pnpm lint-staged --diff=origin/main
