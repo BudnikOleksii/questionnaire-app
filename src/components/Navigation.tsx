@@ -25,7 +25,7 @@ export const Navigation: FC<Props> = ({ hasBackButton, variant }) => {
   const imagesVariant = IMAGES_VARIANTS_MAP[variant];
 
   const goBack = () => {
-    router.back(); // Navigate to the previous page
+    router.back();
   };
 
   return (

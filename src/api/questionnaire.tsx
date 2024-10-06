@@ -16,7 +16,6 @@ export class QuestionnaireService {
   }
 
   async getOneById(id: number) {
-    // Just mock as I don't have an API
     const questions = await this.getAll();
     return questions.find((question) => question.id === id);
   }

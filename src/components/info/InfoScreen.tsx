@@ -21,7 +21,7 @@ export const InfoScreen: FC<Props> = ({ question }) => {
   return (
     <div className="max-w-[330px] mx-auto flex flex-col text-center">
       <H2 className="mb-5 text-light-primary">{title}</H2>
-      <Paragraph className="mb-10">{description}</Paragraph>
+      {description && <Paragraph className="mb-10">{description}</Paragraph>}
 
       {options.map((option) => {
         const { id, text, nextQuestionId } = option;
