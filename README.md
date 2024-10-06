@@ -1,40 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Questionnaire app
 
-## Getting Started
+### Project description
+This is a dynamic web application designed for generating customizable questionnaires. The application's behavior is driven by a JSON configuration file located in the public folder - `public/data/questions.json`. This file defines the structure and flow of the questionnaire, which is rendered dynamically based on the configuration.
 
-First, run the development server:
+The configuration file should contain a `questions` field, which is an array of objects representing the individual questions. Each question can have multiple options, and the application supports conditional navigation between questions based on user input.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+##### Question Structure
+Each question in the JSON file is structured using the following schema:
+```typescript
+export type QuestionId = number;
+export type Answer = string | boolean | number;
+export type ScreenType = 'radio' | 'info'; // It's possible to extend and add more screen types
+export type ConditionalString = string;
+
+export interface Option {
+  id: number;
+  slug: string;
+  value: string;
+  text: string;
+  nextQuestionId: QuestionId | ConditionalString;
+}
+
+export interface Question {
+  id: QuestionId;
+  slug: string;
+  name: string;
+  text: string;
+  description?: string;
+  screenType: ScreenType;
+  options: Option[];
+  isFirstScreen?: boolean;
+  isLastScreen?: boolean;
+}
+
+export interface QuestionsResponse {
+  questions: Question[];
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Features
+- Dynamic Configuration: Modify the questionnaire easily by editing the JSON file without changing the source code.
+- Conditional Logic: Supports conditional transitions between questions based on selected answers.
+- Customizable Screens: Different screen types (radio, info, etc.) allow for flexibility in the questionnaire flow.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Getting Started:
+1. Clone the repository to your local machine, open terminal and clone repo with command bellow:
+```bash
+git clone https://github.com/BudnikOleksii/questionnaire-app.git
+```
+2. Open project in terminal:
+```bash
+cd questionnaire-app/
+```
+3. Set up dependencies:
+```bash 
+pnpm i
+```
+4. Run project by command:
+```bash 
+pnpm build && pnpm start
+```
+5. Open application in your browser `http://localhost:3000/`
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+##### To run app in development environment use:
+```bash 
+pnpm dev
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Technologies used:
+- Next.js with Typescript
+- Redux Toolkit
+- Tailwind
