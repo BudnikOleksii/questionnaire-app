@@ -6,9 +6,15 @@ import questionnaireService from '@/api/questionnaire';
 
 export const getStaticProps = async () => {
   const questions = await questionnaireService.getAll();
+  const firstQuestion = questions.find((question) => question.isFirstScreen);
+
+  if (!firstQuestion) {
+    throw new Error('First question not found');
+  }
+
   return {
     props: {
-      fallbackDestination: `/${questions[0].id}`,
+      fallbackDestination: `/${firstQuestion.id}`,
     },
   };
 };
@@ -24,5 +30,5 @@ export default function Home({
     }
   }, [fallbackDestination, router]);
 
-  return <p>Redirecting...</p>;
+  return null;
 }
